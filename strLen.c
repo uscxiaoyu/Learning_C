@@ -1,31 +1,28 @@
 #include <stdio.h>
-#define MAXCHAR 10000
-int str_len(const char s[]);
+#define MAXCHAR 1000
+int str_len(char *s);
 
 int main()
 {
-    char sarray[MAXCHAR];
-    int c, i, len_str;
+  char a[MAXCHAR];
+  char *pa, c;
+  int i;
 
-    /*
-    i = 0;
-    while ((c = getchar()) != '\n')
-    {
-        sarray[i] = c;
-        ++i;
-    }
-    sarray[i + 1] = '\0';
-    */
-    scanf("%s", sarray);
-    len_str = str_len(sarray);
-    printf("\n字符长度:%d\n", len_str);
+  i = 0;
+  a[i++] = getchar(); /*  */
+
+  while ((c = getchar()) != '\n' && i < MAXCHAR)
+    a[i++] = c;
+
+  pa = a;  /* The pointer to a[0], equivalent to pa = &a[0] */
+  printf("\nThe length of the character is %d\n", str_len(pa));
 }
 
-int str_len(const char s[])
+int str_len(char *s)
 {
-    int i=0;
+  int n;
 
-    while (s[i] != '\0')
-        i++;
-    return i;
+  for (n = 0; *s != '\0'; s++)
+    n++;
+  return n;
 }
