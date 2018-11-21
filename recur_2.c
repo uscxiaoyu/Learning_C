@@ -6,7 +6,7 @@
 long int fib(int n){
     int s;
     if (n <= 0)  //提示错误
-        s = -1;
+        s = 0;
     else if (n == 1)
         s = 0;
     else if (n == 2)
