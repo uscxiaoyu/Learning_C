@@ -2,19 +2,19 @@
 #include <stdlib.h>
 
 int main(void) {
-    int *p, *cp, i;
+    int *p, i;
     p = malloc(6 * sizeof(int));
-    cp = p;
 
-    printf("请输入10个整数:\n");
-    for (i = 0; i < 5; i++){
+    printf("请输入6个整数:\n");
+    for (i = 0; i < 6; i++){
         printf("第%d个整数:", i + 1);
         scanf("%d", p++);
     }
 
+    p = p - 6;  // 指向初始位置
     printf("您输入的数为:");
-    for (i = 0; i < 5; i++){
-        printf("%d ", *cp++);
+    for (i = 0; i < 6; i++){
+        printf("%d ", *p++);
     }
     printf("\n");
 }
